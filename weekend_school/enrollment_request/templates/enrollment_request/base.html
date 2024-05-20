@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %} {% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'assets/styles/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+</head>
+
+<header>
+  <div class="inner-header dynamic-width">
+    <div class="logo">
+      <img src="{% static 'assets/images/logo/education.png' %}" alt="logo">
+    </div>
+
+    <nav>
+      <ul class="nav-links">
+        {% if not request.user.is_authenticated %}
+        <li>
+          <a href="{% url 'enroll_request:landing_page' %}" class="nav-link active-link">Home</a>
+        </li>
+        <li>
+          <a href="{% url 'enroll_request:course_list' %}" class="nav-link">Courses</a>
+        </li>
+        <li>
+          <a href="{% url 'user_account:login' %}" class="btn btn-brand">Login</a>
+        </li>
+        {% elif request.user.is_authenticated %}
+        <li>
+          <a href="#" class="nav-link">Account</a>
+        </li>
+        <li>
+          <a href="{% url 'user_account:logout' %}" class="btn btn-brand">Logout</a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<body>
+  {% block content %}
+  {% endblock %}
+</body>
+</html>

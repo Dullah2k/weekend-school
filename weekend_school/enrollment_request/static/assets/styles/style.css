@@ -1,0 +1,175 @@
+@import url("components.css");
+@import url("presets.css");
+
+/* ================= HEADER ================= */
+header .inner-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .6rem;
+  margin: auto;
+}
+
+header .inner-header .logo img {
+  width: 2.25rem;
+  height: auto;
+}
+
+@media screen and (min-width: 30em) {
+  header .inner-header .logo img {
+    width: 3rem;
+    height: auto;
+  }
+}
+
+header .inner-header nav .nav-links{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+header .inner-header nav .nav-link:not(.btn-brand) {
+  display: block;
+  text-decoration: none;
+  color: var(--black);
+  padding: .5rem 0;
+  transition: all .3 ease;
+  border-bottom: 4px solid var(--white);
+  border-radius: .25rem;
+}
+
+header .inner-header nav .nav-link:hover {
+  border-bottom: 4px solid rgb(224, 224, 224);
+}
+
+header .inner-header nav .active-link {
+  border-bottom: 4px solid grey !important;
+}
+
+/* ================= HERO ================= */
+.hero-container {
+  background-color: white;
+}
+
+.hero {
+  text-align: center;
+  padding: .6rem;
+  margin: 20% auto;
+  padding: 6rem 0;
+}
+
+@media screen and (min-width: 30em) {
+  .hero {
+    margin: 11% auto;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .hero {
+    margin: 5% auto;
+  }
+}
+
+
+.hero .header {
+  margin: .6rem 0;
+  font-size: 1.85rem;
+}
+
+.hero .header h1 {
+  font-weight: 200;
+}
+
+.hero .cta {
+  margin: .6rem 0;
+}
+
+.hero .cta > a {
+  width: 40%;
+}
+
+/* ================= FEATURES ================= */
+.features > .feature {
+  margin: .6rem;
+}
+
+@media screen and (min-width: 55em) {
+  .features > .feature {
+    margin: 0;
+  }  
+}
+
+@media screen and (min-width: 55em) {
+  .features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .6rem;
+  }
+}
+
+@media screen and (min-width: 58em) {
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ================= COURSES ================= */
+.courses {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .6rem;
+  margin: 1rem auto;
+}
+
+.course-main .load-more {
+  text-align: center;
+}
+
+.course-main .load-more button {
+  border-radius: 1rem;
+  margin: 2rem;
+}
+
+/* ================= COURSE DETAILS ================= */
+.course-details .course-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.course-details .course-image img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  object-fit: cover;
+}
+
+.course-details .course-details .deadline {
+  margin: .3rem 0;
+}
+
+.course-details .course-details .course-title h3{
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+/* ================= LOGIN FORM ================= */
+.form .login-form {
+  width: 90%;
+  margin: 5rem auto;
+}
+
+@media screen and (min-width: 30em) {
+  .form .login-form {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 50em) {
+  .form .login-form {
+    width: 60%;
+  }
+}

@@ -1,0 +1,88 @@
+{% extends "enrollment_request/base.html" %}
+{% block title %} Course Details {% endblock %}
+
+{% block content %}
+  <main class="course-details dynamic-width">
+    <!-- <h1> {{ course.name }} course details</h1> -->
+    <section class="">
+      <div class="course-image">
+        <img src="{{ course.image.url }}" alt="{{ course.name }} image">
+      </div>
+
+      <div class="course-details">
+        <p class="deadline">
+          Enrollment Deadline <i class="bi bi-calendar3"></i>
+          {{ course.deadline }}
+        </p>
+        <div class="course-title">
+          <h3>{{ course.name }}</h3>
+        </div>
+        <p class="course-description">
+          {{ course.description }}
+        </p>
+      </div>
+
+      {% if request.user %}
+        <p>
+          <li>
+            <a href="{% url 'enroll_request:update_course' course.id %}">Update info</a>
+          </li>
+          <li>
+            <a href="{% url 'enroll_request:delete_course' course.id %}">Delete</a>
+          </li>
+        </p>
+      {% endif %}
+
+      {% if course.is_enrollment_open %}
+        <form action="{% url 'enroll_request:enroll_in_course' course.id %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-brand w-100 mtb-1">Send Enroll Request</button>
+        </form>
+      {% else %}
+        <p>Enrollment deadline has passed</p>
+      {% endif %}      
+    </section>
+  </main>
+
+{% endblock %}
+
+
+<h1> {{ course.name }} course details</h1>
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">
+        {{ message|safe }}
+        <a href="#">Close</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<img src="{{ course.image.ur }}" alt="">
+
+{{ course.description }}
+{{ course.deadline }}
+
+<p>
+  <li>
+    <a href="{% url 'enroll_request:update_course' course.id %}">Update info</a>
+  </li>
+  <li>
+    <a href="{% url 'enroll_request:delete_course' course.id %}">Delete</a>
+  </li>
+</p>
+
+{% if course.is_enrollment_open %}
+  <form action="{% url 'enroll_request:enroll_in_course' course.id %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-dark">Enroll in this course</button>
+  </form>
+{% else %}
+  <p>Enrollment deadline has passed</p>
+{% endif %}
+
+
+<p>
+  <a href="{% url 'enroll_request:course_list' %}">Back to list</a>
+</p>

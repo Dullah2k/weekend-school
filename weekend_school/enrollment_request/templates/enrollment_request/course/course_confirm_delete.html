@@ -1,0 +1,15 @@
+{% extends "enrollment_request/base.html" %}
+{% block title %} {{ course.name }} Details {% endblock %}
+
+{% block content %}
+  <h1>Delete {{ course.name }} course</h1>
+  <p>
+    Are you sure you want to delete the course 
+    "{{ course.name }}"
+  </p>
+  <form action="" method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm detele</button>
+    <a href="{% url 'enroll_request:course_list' %}">Cancel</a>
+  </form>
+{% endblock %}

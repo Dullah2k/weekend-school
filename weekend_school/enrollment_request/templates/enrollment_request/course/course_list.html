@@ -1,0 +1,124 @@
+{% extends "enrollment_request/base.html" %}
+{% block title %} Courses List {% endblock %}
+
+{% block content %}
+  <main class="course-main">
+    <!-- {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li class="{{ message.tags }}">
+            {{ message|safe }}
+            <a href="#">Close</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %} -->
+    
+    {% if messages %}
+      <div class="message-container dynamic-width">
+        {% for message in messages %}
+          <div class="message {{ message.tags }}">
+            <div class="message-body">
+              <div class="message-icon">
+                <i class="fa fa-circle-check"></i>
+              </div>
+              <div class="message">
+                <p>{{ message|safe }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <section class="hsn-container dynamic-width">
+      <article>
+        <nav class="horizontal-scroll-nav">
+          <ul class="nav-links">
+            <li>
+              <a href="#" class="nav-link active-link">
+                <i class="bi bi-app-indicator"></i>
+                All 
+              </a>
+            </li>
+  
+            <li>
+              <a href="#" class="nav-link">
+                <i class="fa-brands fa-python"></i>
+                Python 
+              </a>
+            </li>
+            
+            <li>
+              <a href="#" class="nav-link">
+                <i class="fa-brands fa-js"></i>
+                Javascript
+              </a>
+            </li>
+  
+            <li>
+              <a href="#" class="nav-link">
+                <i class="fa-brands fa-bootstrap"></i>
+                Libraries 
+              </a>
+            </li>
+            
+            <li>
+              <a href="#" class="nav-link">
+                <i class="fa-brands fa-react"></i>
+                Frameworks 
+              </a>
+            </li>
+            
+            <li>
+              <a href="#" class="nav-link">
+                <i class="fa-brands fa-chrome"></i>
+                Web dev 
+              </a>
+            </li>
+            
+            
+            <li>
+              <a href="#" class="nav-link">
+                <i class="fa-solid fa-server"></i>
+                Server side 
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </article>
+    </section>
+
+    <section class="courses dynamic-width">
+      {% for course in courses %}
+      <div class="course-card">
+        <div class="course-image">
+          <img src="{{ course.image.url }}" alt="">
+        </div>
+
+        <div class="course-details">
+          <small class="deadline">
+            Deadline <i class="bi bi-calendar3"></i>
+            {{ course.deadline }} 
+          </small>
+          <div class="course-title">
+            <h4>{{ course.name }}</h4>
+          </div>
+          <p class="course-description">
+            {{ course.description }}
+          </p>
+        </div>
+        <div class="cta">
+          <a href="{% url 'enroll_request:course_details' course.id %}">
+            View Details & Enroll <i class="bi bi-chevron-right"></i> 
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+
+    <!-- <section class="load-more">
+      <button class="btn btn-brand">Load more</button>
+    </section> -->
+  </main>
+{% endblock %}

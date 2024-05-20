@@ -1,0 +1,20 @@
+{% extends "enrollment_request/base.html" %}
+{% block title %} Sign in  {% endblock %}
+
+{% block content %}
+  <section class="dynamic-width">
+    <form action="" method="post" class="login-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-brand mtb-1 w-100">Login</button>
+      
+      <a href="{% url 'user_account:register_user' %}" class="create-account-link">
+        <p>
+          <i class="bi bi-exclamation-circle"></i>
+          Create account
+        </p>
+      </a>
+    </form>
+
+  </section>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "enrollment_request/base.html" %}
+{% block title %} Add a new Course {% endblock %}
+
+{% block content %}
+  <form action="" method="post" enctype="multipart/form-data" class="course-form">
+    {% csrf_token %}
+    {{ course_form.as_p }}
+    <button type="submit" class="btn btn-brand mtb-1 w-100">Add course</button>
+  </form>
+{% endblock %}
