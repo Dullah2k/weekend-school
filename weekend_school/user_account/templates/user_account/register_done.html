@@ -2,6 +2,8 @@
 {% block title %} Account successfuly created {% endblock %}
 
 {% block content %}
-  <h1>You have successfuly created an account</h1>
-  <p><a href="#">Login in here</a></p>
+  <section class="dynamic-width">
+    <h1>You have successfuly created an account</h1>
+    <p><a href="{% url 'user_account:login' %}">Login in here</a></p>
+  </section>
 {% endblock %}

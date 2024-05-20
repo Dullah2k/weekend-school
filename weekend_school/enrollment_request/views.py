@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib import messages
 from .forms import CourseForm
 from .models import Course, EnrollmentReques
+
 
 def landing_page(request):
   return render(request, "enrollment_request/index.html")
@@ -18,7 +20,12 @@ def create_course(request):
   else:
     course_form = CourseForm()
   return render(request, 'enrollment_request/course/create_course.html', {'course_form' : course_form})
-     
+
+@staff_member_required
+def staff_course_list(request):
+  courses = Course.objects.all()
+  return render(request, "enrollment_request/course/staff_course_list.html", {'courses':courses})
+
 def course_list(request):
   courses = Course.objects.all()
   return render(request, "enrollment_request/course/course_list.html", {'courses':courses})

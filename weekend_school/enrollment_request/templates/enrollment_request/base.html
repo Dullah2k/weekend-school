@@ -30,8 +30,11 @@
           <a href="{% url 'user_account:login' %}" class="btn btn-brand">Login</a>
         </li>
         {% elif request.user.is_authenticated %}
-        <li>
-          <a href="#" class="nav-link">Account</a>
+         <li>
+          <a href="#" class="nav-link">
+            {{ request.user.first_name }}
+            {{ request.user.last_name }}
+          </a>
         </li>
         <li>
           <a href="{% url 'user_account:logout' %}" class="btn btn-brand">Logout</a>

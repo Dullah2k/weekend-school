@@ -1,6 +1,16 @@
+from django.contrib.auth.views import LoginView
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from .forms import UserRegistrationForm
 from enrollment_request.models import Student
+
+class CustomLoginView(LoginView):
+  def get_success_url(self):
+    user = self.request.user
+    if user.is_staff:
+      return reverse_lazy("enroll_request:staff_course_list")
+    else:
+      return reverse_lazy("enroll_request:course_list")
 
 def register_user(request):
   if request.method == "POST":

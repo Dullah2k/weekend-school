@@ -1,0 +1,50 @@
+{% extends "enrollment_request/base.html" %}
+{% block title %} Courses List {% endblock %}
+
+{% block content %}
+  <main class="course-main">
+    {% if messages %}
+      <div class="message-container dynamic-width">
+        {% for message in messages %}
+          <div class="message {{ message.tags }}">
+            <div class="message-body">
+              <div class="message-icon">
+                <i class="fa fa-circle-check"></i>
+              </div>
+              <div class="message">
+                <p>{{ message|safe }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <section class="courses dynamic-width">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Course name</th>
+            <th>Deadline</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for course in courses %}
+          <tr>
+            <td> {{ course.forloop.counter }} </td>
+            <td> {{ course.name }} </td>
+            <td> {{ course.deadline }} </td>
+            <td>
+              <a href="{% url 'enroll_request:update_course' course.id %}">Edit </a>
+              <a href="{% url 'enroll_request:delete_course' course.id %}">delete </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+{% endblock %}
