@@ -156,6 +156,12 @@ header .inner-header nav .active-link {
   text-transform: capitalize;
 }
 
+.course-details .staf-action-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
 /* ================= LOGIN FORM ================= */
 .form .login-form {
   width: 90%;

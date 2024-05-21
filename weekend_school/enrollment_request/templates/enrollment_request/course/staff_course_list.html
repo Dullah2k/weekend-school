@@ -20,7 +20,15 @@
       </div>
     {% endif %}
 
-    <section class="courses dynamic-width">
+    <section class="dynamic-width">
+      <div class="flexbox">
+        <h1>Courses List</h1>
+        <a href="{% url 'enroll_request:create_course' %}" class="btn btn-brand mtb-1"> 
+          <i class="fa-solid fa-plus"></i>
+          Add a new course
+        </a>
+      </div>
+
       <table>
         <thead>
           <tr>

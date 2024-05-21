@@ -64,7 +64,7 @@ def enroll_in_course(request, id):
     messages.error(request, "Enroll deadline has passed")
     return redirect("enroll_request:course_details", id=course.id)
   
-  enrollment_request, created = EnrollmentReques.objects.get_or_create(student=student, course=course)
+  created = EnrollmentReques.objects.get_or_create(student=student, course=course)
   if created:
     messages.success(request, "Enrollment request submitted")
   else:

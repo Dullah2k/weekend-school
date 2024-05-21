@@ -38,6 +38,28 @@
   color: var(--white);
 }
 
+.btn-danger {
+  background-color: var(--danger-light);
+  color: var(--danger);
+}
+
+.btn-danger:hover {
+  background-color: var(--danger);
+  color: white;
+  border: 1.5px solid var(--danger);
+}
+
+.btn-warning {
+  background-color: var(--warning-light);
+  color: var(--warning);
+  border: 1.5px solid var(--warning);
+}
+
+.btn-warning:hover {
+  background-color: var(--warning);
+  color: white;
+}
+
 /* ================== FEATURE ================== */
 .feature {
   border: 2px solid var(--light-grey);
@@ -170,6 +192,11 @@
   color: var(--warning);
 }
 
+.info .message-body {
+  background-color: var(--warning2);
+  color: var(--warning);
+}
+
 .success .message-body {
   background-color: var(--success2);
   color: var(--success);
@@ -190,26 +217,35 @@ form label {
   display: none;
 }
 
-.labeled-form label {
+.labeled label {
   display: block;
 }
 
-form input {
+form input, textarea {
   display: block;
   width: 100%;
   border-radius: .3rem;
   padding: .6rem;
   border: 1.5px solid var(--brand-color);
-  height: 2.6rem;
   font-family: inherit;
   font-weight: 600;
   caret-color: var(--brand-color);
+}
+
+form input {
+  height: 2.6rem;
 }
 
 form input:focus {
   outline: 2px solid var(--brand-color);
   border: none;
 }
+
+form textarea:focus {
+  outline: 2px solid var(--brand-color);
+  border: none;
+}
+
 
 form .errorlist li {
   background-color: rgb(206, 56, 56);
