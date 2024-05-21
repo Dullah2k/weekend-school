@@ -173,3 +173,35 @@ header .inner-header nav .active-link {
     width: 60%;
   }
 }
+
+/* ================= STAFF COURSE LIST ================= */
+.staff-course-list table .action-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.staff-course-list table .action-icons a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  background-color: gray;
+  padding: .3rem .6rem;
+  border-radius: .3rem;
+}
+
+.staff-course-list table .action-icons .details {
+  background-color: var(--brand-color);
+  color: var(--brand-color-light);
+}
+
+.staff-course-list table .action-icons .edit {
+  background-color: var(--warning);
+  color: var(--warning-light);
+}
+
+.staff-course-list table .action-icons .delete {
+  background-color: var(--danger);
+  color: var(--danger-light);
+}
+
