@@ -190,6 +190,10 @@ form label {
   display: none;
 }
 
+.labeled-form label {
+  display: block;
+}
+
 form input {
   display: block;
   width: 100%;
@@ -207,8 +211,6 @@ form input:focus {
   border: none;
 }
 
-form input:caret
-
 form .errorlist li {
   background-color: rgb(206, 56, 56);
   border-radius: .3rem;
@@ -221,4 +223,21 @@ form .errorlist li {
 
 form .errorlist li i {
   font-size: 1.5rem;
+}
+
+.form-width {
+  width: 90%;
+  margin: 5rem auto;
+}
+
+@media screen and (min-width: 30em) {
+  .form-width {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 50em) {
+  .form-width {
+    width: 60%;
+  }
 }

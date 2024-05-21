@@ -9,12 +9,6 @@ class CourseForm(forms.ModelForm):
       "deadline" : forms.DateTimeInput(
         attrs={
         'type' : 'datetime-local',
-        'class' : 'form-control', 
-      }),
-      "name" : forms.TextInput(
-        attrs={
-        'type' : 'text',
-        'class' : 'form-control', 
       }),
     }
 

@@ -3,10 +3,10 @@
 
 {% block content %}
 <section class="dynamic-width">
-  <form action="" method="post" class="login-form">
+  <form action="" method="post" class="form-width">
     {% csrf_token %}
     {{ reg_form.as_p }}
-    <button type="submit">Create account</button>
+    <button type="submit" class="btn btn-brand w-100 mtb-1">Create account</button>
   </form>
 
 </section>
