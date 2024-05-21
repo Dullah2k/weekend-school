@@ -176,71 +176,49 @@
 }
 
 /* ================== FORMS ================== */
-form .form-control {
-  display: block;
-  width: 100%;
-  font-family: inherit;
-  padding: .6rem;
-  font-size: 1rem;
-  border: none;
-  outline: none;
-  border: 1.5px solid var(--brand-color);
-  border-radius: .3rem;
-}
-
-form .form-group {
+form > p {
   margin: .6rem 0;
 }
 
-form .icon-inputs {
+form .helptext {
+  display: block;
+  padding: .3rem 0;
+}
+
+form label {
+  display: block;
+  display: none;
+}
+
+form input {
+  display: block;
+  width: 100%;
+  border-radius: .3rem;
+  padding: .6rem;
+  border: 1.5px solid var(--brand-color);
+  height: 2.6rem;
+  font-family: inherit;
+  font-weight: 600;
+  caret-color: var(--brand-color);
+}
+
+form input:focus {
+  outline: 2px solid var(--brand-color);
+  border: none;
+}
+
+form input:caret
+
+form .errorlist li {
+  background-color: rgb(206, 56, 56);
+  border-radius: .3rem;
+  padding: .5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: .6rem;
+  color: rgb(229, 143, 143);
 }
 
-form .icon-inputs i {
+form .errorlist li i {
   font-size: 1.5rem;
-  color: var(--brand-color);
-}
-
-form .icon-inputs input {
-  background-color: transparent;
-  border: none;
-  outline: none;
-}
-
-form .icon-inputs {
-  border: 1px solid var(--brand-color);
-  padding-left: .6rem;
-  border-radius: .3rem;
-}
-
-.create-account-link {
-  color: var(--brand-color);
-  text-decoration: none;
-  padding: .6rem 0;
-}
-
-.course-form label {
-  display: block;
-  font-weight: 500;
-}
-
-.course-form input {
-  font-size: .9rem;
-}
-
-.course-form textarea {
-  display: block;
-  width: 100%;
-  padding: .6rem;
-  font-family: inherit;
-  border: none;
-  outline: none;
-  border: 1.5px solid var(--brand-color);
-  border-radius: .3rem;
-}
-
-.course-form > *{
-  margin: .6rem 0;
 }
