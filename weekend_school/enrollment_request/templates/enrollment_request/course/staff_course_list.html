@@ -2,7 +2,7 @@
 {% block title %} Courses List {% endblock %}
 
 {% block content %}
-  <main class="course-main">
+  <main class="staff-course-list">
     {% if messages %}
       <div class="message-container dynamic-width">
         {% for message in messages %}
@@ -45,8 +45,17 @@
             <td> {{ course.name }} </td>
             <td> {{ course.deadline }} </td>
             <td>
-              <a href="{% url 'enroll_request:update_course' course.id %}">Edit </a>
-              <a href="{% url 'enroll_request:delete_course' course.id %}">delete </a>
+              <div class="action-icons">
+                <a href="{% url 'enroll_request:course_details' course.id %}" class="details">
+                  <i class="fa-solid fa-list-ul"></i> 
+                </a>
+                <a href="{% url 'enroll_request:update_course' course.id %}" class="edit">
+                  <i class="fa-solid fa-pen-to-square"></i> 
+                </a>
+                <a href="{% url 'enroll_request:delete_course' course.id %}" class="delete">
+                  <i class="fa-solid fa-trash-can"></i> 
+                </a>
+              </div>
             </td>
           </tr>
           {% endfor %}
