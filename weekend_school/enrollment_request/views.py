@@ -71,3 +71,6 @@ def enroll_in_course(request, id):
     messages.info(request, "You have already requested to enroll in this course")
   return redirect("enroll_request:course_details", id=course.id)
 
+def enroll_request_list(request):
+  enroll_requests = EnrollmentReques.objects.all()
+  return render(request, "enrollment_request/enroll_request/request_list.html", {'enroll_requests':enroll_requests}) 

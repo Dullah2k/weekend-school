@@ -1,8 +1,8 @@
 {% extends "enrollment_request/base.html" %}
-{% block title %} Courses List {% endblock %}
+{% block title %} Enrollment Requests' List {% endblock %}
 
 {% block content %}
-  <main class="staff-course-list">
+  <main class="staff-enroll_request-list">
     {% if messages %}
       <div class="message-container dynamic-width">
         {% for message in messages %}
@@ -22,10 +22,10 @@
 
     <section class="dynamic-width">
       <div class="flexbox">
-        <h1>Courses List</h1>
-        <a href="{% url 'enroll_request:create_course' %}" class="btn btn-brand mtb-1"> 
+        <h1>enroll_requests List</h1>
+        <a href="#" class="btn btn-brand mtb-1"> 
           <i class="fa-solid fa-plus"></i>
-          Add a new course
+          Add a new enroll_request
         </a>
       </div>
       <div class="table-container">
@@ -33,26 +33,28 @@
           <thead>
             <tr>
               <th>#</th>
-              <th>Course name</th>
-              <th>Deadline</th>
+              <th>Student</th>
+              <th>Course</th>
+              <th>Status</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            {% for course in courses %}
+            {% for enroll_request in enroll_requests %}
             <tr>
               <td> {{ forloop.counter }} </td>
-              <td> {{ course.name }} </td>
-              <td> {{ course.deadline }} </td>
+              <td> {{ enroll_request.student.user.first_name }} </td>
+              <td> {{ enroll_request.course }} </td>
+              <td> {{ enroll_request.status }} </td>
               <td>
                 <div class="action-icons">
-                  <a href="{% url 'enroll_request:course_details' course.id %}" class="details">
+                  <!-- <a href="#" class="details"> -->
                     <i class="fa-solid fa-list-ul"></i> 
                   </a>
-                  <a href="{% url 'enroll_request:update_course' course.id %}" class="edit">
+                  <!-- <a href="#" class="edit"> -->
                     <i class="fa-solid fa-pen-to-square"></i> 
                   </a>
-                  <a href="{% url 'enroll_request:delete_course' course.id %}" class="delete">
+                  <!-- <a href="#" class="delete"> -->
                     <i class="fa-solid fa-trash-can"></i> 
                   </a>
                 </div>
