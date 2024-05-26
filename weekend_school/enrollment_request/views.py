@@ -74,3 +74,7 @@ def enroll_in_course(request, id):
 def enroll_request_list(request):
   enroll_requests = EnrollmentReques.objects.all()
   return render(request, "enrollment_request/enroll_request/request_list.html", {'enroll_requests':enroll_requests}) 
+
+def enroll_request_details(request, id):
+  enroll_request = get_object_or_404(EnrollmentReques, id=id)
+  return render(request, "enrollment_request/enroll_request/request_details.html", {"enroll_request":enroll_request})
