@@ -26,14 +26,17 @@ def staff_course_list(request):
   courses = Course.objects.all()
   return render(request, "enrollment_request/course/staff_course_list.html", {'courses':courses})
 
+@staff_member_required
 def course_list(request):
   courses = Course.objects.all()
   return render(request, "enrollment_request/course/course_list.html", {'courses':courses})
 
+@staff_member_required
 def course_details(request, id):
   course = get_object_or_404(Course, id=id)
   return render(request, "enrollment_request/course/course_details.html", {'course':course})
 
+@staff_member_required
 def update_course(request, id):
   course = get_object_or_404(Course, id=id)
   if request.method == 'POST':
@@ -48,6 +51,7 @@ def update_course(request, id):
     course_form = CourseForm(instance=course)
   return render(request, "enrollment_request/course/update_course.html", {'course_form':course_form})
 
+@staff_member_required
 def delete_course(request, id):
   course = get_object_or_404(Course, id=id)
   if request.method == "POST":
@@ -71,10 +75,12 @@ def enroll_in_course(request, id):
     messages.info(request, "You have already requested to enroll in this course")
   return redirect("enroll_request:course_details", id=course.id)
 
+@staff_member_required
 def enroll_request_list(request):
   enroll_requests = EnrollmentReques.objects.all()
   return render(request, "enrollment_request/enroll_request/request_list.html", {'enroll_requests':enroll_requests}) 
 
+@staff_member_required
 def enroll_request_details(request, id):
   enroll_request = get_object_or_404(EnrollmentReques, id=id)
   return render(request, "enrollment_request/enroll_request/request_details.html", {"enroll_request":enroll_request})
