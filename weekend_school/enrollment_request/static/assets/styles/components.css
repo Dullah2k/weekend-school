@@ -60,6 +60,7 @@
   color: white;
 }
 
+
 /* ================== FEATURE ================== */
 .feature {
   border: 2px solid var(--light-grey);
@@ -197,6 +198,7 @@
   color: var(--warning);
 }
 
+
 .success .message-body {
   background-color: var(--success2);
   color: var(--success);
@@ -261,19 +263,18 @@ form .errorlist li i {
   font-size: 1.5rem;
 }
 
-.form-width {
-  width: 90%;
-  margin: 5rem auto;
+/* ================== TABLES ================== */
+table {
+  width: 100%;
 }
 
-@media screen and (min-width: 30em) {
-  .form-width {
-    width: 70%;
-  }
+table, th, td {
+  border: 1px solid var(--brand-color);
+  border-collapse: collapse;
+  padding: .6rem;
+  text-align: left;
 }
 
-@media screen and (min-width: 50em) {
-  .form-width {
-    width: 60%;
-  }
+table tr {
+  width: 100%;
 }

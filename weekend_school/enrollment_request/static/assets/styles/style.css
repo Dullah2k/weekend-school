@@ -162,20 +162,20 @@ header .inner-header nav .active-link {
   gap: 1rem;
 }
 
-/* ================= LOGIN FORM ================= */
-.form .login-form {
+/* ================= FORM WIDTH ================= */
+.form-width {
   width: 90%;
   margin: 5rem auto;
 }
 
 @media screen and (min-width: 30em) {
-  .form .login-form {
+  .form-width {
     width: 70%;
   }
 }
 
 @media screen and (min-width: 50em) {
-  .form .login-form {
+  .form-width {
     width: 60%;
   }
 }
@@ -210,4 +210,5 @@ header .inner-header nav .active-link {
   background-color: var(--danger);
   color: var(--danger-light);
 }
+
 

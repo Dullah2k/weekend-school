@@ -2,14 +2,17 @@
 
 :root {
   --primary-font: 'Quicksand', sans-serif;
+  --brand-color-light: #abe4f0;
   --brand-color: #3498ac;
   --brand-color-dk: #246c7a;
   --radius: .6rem;
   --light-grey: #ecefed;
   --white: whitesmoke;
   --black: #0c0c0c;
+  --danger-light: rgb(245, 161, 169);
   --danger: rgb(220, 53, 69);
   --danger2: rgb(104, 26, 34);
+  --warning-light: #ffebae;
   --warning: #ffc107;
   --warning2: #644c03;
   --success: #198754;

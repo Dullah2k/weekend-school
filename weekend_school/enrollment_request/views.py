@@ -26,12 +26,10 @@ def staff_course_list(request):
   courses = Course.objects.all()
   return render(request, "enrollment_request/course/staff_course_list.html", {'courses':courses})
 
-@staff_member_required
 def course_list(request):
   courses = Course.objects.all()
   return render(request, "enrollment_request/course/course_list.html", {'courses':courses})
 
-@staff_member_required
 def course_details(request, id):
   course = get_object_or_404(Course, id=id)
   return render(request, "enrollment_request/course/course_details.html", {'course':course})
