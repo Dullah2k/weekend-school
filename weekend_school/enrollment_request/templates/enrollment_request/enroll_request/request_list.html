@@ -22,10 +22,7 @@
 
     <section class="dynamic-width">
       <div class="flexbox">
-        <h1>enroll_requests List</h1>
-        <a href="#" class="btn btn-brand mtb-1"> 
-          <i class="fa-solid fa-plus"></i>
-          Add a new enroll_request
+        <h1 class="mtb-1">Enroll Requests </h1>
         </a>
       </div>
       <div class="table-container">
@@ -48,7 +45,7 @@
               <td> {{ enroll_request.status }} </td>
               <td>
                 <div class="action-icons">
-                  <!-- <a href="#" class="details"> -->
+                  <a href="{% url 'enroll_request:enroll_request_details' enroll_request.id %}" class="details">
                     <i class="fa-solid fa-list-ul"></i> 
                   </a>
                   <!-- <a href="#" class="edit"> -->

@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib import messages
-from .forms import CourseForm
+from .forms import CourseForm, EnrollmentRequestForm
 from .models import Course, EnrollmentReques
-
 
 def landing_page(request):
   return render(request, "enrollment_request/index.html")
@@ -81,4 +80,13 @@ def enroll_request_list(request):
 @staff_member_required
 def enroll_request_details(request, id):
   enroll_request = get_object_or_404(EnrollmentReques, id=id)
-  return render(request, "enrollment_request/enroll_request/request_details.html", {"enroll_request":enroll_request})
+
+  if request.method == 'POST':
+    form = EnrollmentRequestForm(request.POST)
+    if form.is_valid():
+      form.save()
+      messages.success(request, 'Enrollment request updated successfuly')
+      return redirect('enroll_request:enroll_request_list')
+  else:
+    form = EnrollmentRequestForm(instance=enroll_request)
+  return render(request, "enrollment_request/enroll_request/request_details.html", {"enroll_request":enroll_request, "form":form})

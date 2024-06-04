@@ -1,0 +1,19 @@
+{% extends "enrollment_request/base.html" %}
+{% block title %} Enrollment Requests' List {% endblock %}
+
+{% block content %}
+  <main class="staff-enroll_request-list">
+    <section class="dynamic-width">
+      <h3> 
+        {{ enroll_request.student.user.first_name }}'s Request to take the
+        course "{{ enroll_request.course }}"
+      </h3>
+      <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update status</button>
+      </form>
+    </section>
+
+  </main>
+{% endblock %}
