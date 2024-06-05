@@ -42,7 +42,14 @@
               <td> {{ forloop.counter }} </td>
               <td> {{ enroll_request.student.user.first_name }} </td>
               <td> {{ enroll_request.course }} </td>
-              <td> {{ enroll_request.status }} </td>
+              <td> 
+                <div class="badge-container {{ enroll_request.status }}">
+                  <div class="badge">
+                    <small>{{ enroll_request.status }}</small>
+                  </div>
+                </div>
+                 
+              </td>
               <td>
                 <div class="action-icons">
                   <a href="{% url 'enroll_request:enroll_request_details' enroll_request.id %}" class="details">

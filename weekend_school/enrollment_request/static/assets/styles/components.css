@@ -292,7 +292,7 @@ table tr {
   background-color: var(--warning);
 }
 
-.success .badge small {
+.approved .badge small {
   background-color: var(--success);
 }
 
