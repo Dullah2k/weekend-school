@@ -278,3 +278,24 @@ table, th, td {
 table tr {
   width: 100%;
 }
+
+/* ================== BADGE ================== */
+.badge small {
+  background-color: var(--warning);
+  color: white;
+  padding: .3rem;
+  font-weight: 400;
+  border-radius: 50rem;
+}
+
+.pending .badge small {
+  background-color: var(--warning);
+}
+
+.success .badge small {
+  background-color: var(--success);
+}
+
+.rejected .badge small {
+  background-color: var(--danger);
+}
