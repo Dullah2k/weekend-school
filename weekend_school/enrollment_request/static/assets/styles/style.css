@@ -39,12 +39,13 @@ header .inner-header nav .nav-link:not(.btn-brand) {
   border-radius: .25rem;
 }
 
+
 header .inner-header nav .nav-link:hover {
-  border-bottom: 4px solid rgb(224, 224, 224);
+  border-bottom: 4px solid var(--brand-color-light);
 }
 
 header .inner-header nav .active-link {
-  border-bottom: 4px solid grey !important;
+  border-bottom: 4px solid var(--brand-color) !important;
 }
 
 /* ================= HERO ================= */
